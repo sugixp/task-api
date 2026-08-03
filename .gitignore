@@ -5,3 +5,7 @@ tarefas.db
 test.db
 .pytest_cache/
 .env
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
