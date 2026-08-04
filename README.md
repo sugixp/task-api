@@ -4,7 +4,7 @@ API REST para gerenciamento de tarefas, com autenticação de usuários, constru
 
 🔗 **Front-end (GitHub Pages):** https://sugixp.github.io/task-api/
 
-> ⚠️ **Sobre o deploy na AWS:** a API foi implantada e testada com sucesso no AWS Elastic Beanstalk (evidências e passo a passo neste README). O ambiente foi encerrado propositalmente após a validação para evitar custos de manutenção contínua fora do escopo deste projeto de estudo. A reativação é rápida — o ambiente inteiro é recriado com um único comando (`eb create task-api-env`), já que toda a configuração permanece salva no projeto. Disponível para demonstração ao vivo mediante solicitação.
+> ⚠️ **Sobre o deploy na AWS:** a API foi implantada e testada com sucesso no AWS Elastic Beanstalk (evidências e passo a passo neste README). O ambiente foi encerrado propositalmente após a validação para evitar custos de manutenção contínua fora do escopo deste projeto de estudo. A reativação é rápida — o ambiente inteiro é recriado com um único comando (`eb create task-api-env`), já que toda a configuração permanece salva no projeto.
 
 ## Sobre o projeto
 
