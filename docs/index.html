@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task API — Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Gerenciador de Tarefas</h1>
+      <p class="subtitle">Front-end consumindo a Task API (FastAPI + AWS)</p>
+
+      <!-- Tela de autenticação -->
+      <section id="auth-section" class="card">
+        <div class="tabs">
+          <button id="tab-login" class="tab active">Login</button>
+          <button id="tab-registro" class="tab">Registrar</button>
+        </div>
+
+        <form id="form-auth">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="seu@email.com" />
+
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" required placeholder="••••••••" />
+
+          <button type="submit" id="btn-auth">Entrar</button>
+        </form>
+
+        <p id="auth-mensagem" class="mensagem"></p>
+      </section>
+
+      <!-- Tela de tarefas (escondida até login) -->
+      <section id="tarefas-section" class="card hidden">
+        <div class="header-tarefas">
+          <span id="usuario-logado"></span>
+          <button id="btn-logout">Sair</button>
+        </div>
+
+        <form id="form-tarefa">
+          <input
+            type="text"
+            id="titulo"
+            placeholder="Título da tarefa"
+            required
+          />
+          <input type="text" id="descricao" placeholder="Descrição" required />
+          <button type="submit">Adicionar</button>
+        </form>
+
+        <ul id="lista-tarefas"></ul>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
