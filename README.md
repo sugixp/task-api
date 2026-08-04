@@ -2,8 +2,9 @@
 
 API REST para gerenciamento de tarefas, com autenticação de usuários, construída como projeto de estudo aplicado, cobrindo o ciclo completo de desenvolvimento: back-end, testes automatizados, containerização, deploy em nuvem e front-end de consumo.
 
-🔗 **API em produção (AWS):** http://task-api-env.eba-csj5ddzb.sa-east-1.elasticbeanstalk.com/docs
 🔗 **Front-end (GitHub Pages):** https://sugixp.github.io/task-api/
+
+> ⚠️ **Sobre o deploy na AWS:** a API foi implantada e testada com sucesso no AWS Elastic Beanstalk (evidências e passo a passo neste README). O ambiente foi encerrado propositalmente após a validação para evitar custos de manutenção contínua fora do escopo deste projeto de estudo. A reativação é rápida — o ambiente inteiro é recriado com um único comando (`eb create task-api-env`), já que toda a configuração permanece salva no projeto. Disponível para demonstração ao vivo mediante solicitação.
 
 ## Sobre o projeto
 
@@ -72,6 +73,15 @@ uvicorn main:app --reload
 
 A API estará disponível em `http://127.0.0.1:8000`, com documentação interativa em `http://127.0.0.1:8000/docs`.
 
+## Reativando o deploy na AWS
+
+```bash
+eb init          # se necessário reconfigurar localmente
+eb create task-api-env
+```
+
+Após alguns minutos, o comando retorna a URL pública do ambiente ativo.
+
 ## Como rodar com Docker
 
 ```bash
@@ -103,7 +113,7 @@ Uma interface simples em HTML, CSS e JavaScript puro consome a API para demonstr
 
 ## Limitações conhecidas e próximos passos
 
-Este projeto tem fins de estudo , e algumas decisões refletem esse escopo:
+Este projeto tem fins de estudo e portfólio, e algumas decisões refletem esse escopo:
 
 - **Banco de dados SQLite dentro do container**: os dados não persistem entre reinicializações do ambiente na AWS. Em um cenário de produção, seria usado um banco gerenciado externo (ex: Amazon RDS).
 - **CORS liberado para todas as origens (`*`)**: adequado para desenvolvimento e demonstração; em produção, seria restrito ao domínio específico do front-end.
