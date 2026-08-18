@@ -1,7 +1,7 @@
 // ==========================================================
 // CONFIGURAÇÃO — troque pela URL da sua API se ela mudar
 // ==========================================================
-const API_URL = "http://task-api-env.eba-csj5ddzb.sa-east-1.elasticbeanstalk.com";
+const API_URL = "https://d2uab0curhnf0m.cloudfront.net";
 
 // Estado em memória (não usamos localStorage aqui para manter tudo simples;
 // isso significa que o login se perde ao recarregar a página)
