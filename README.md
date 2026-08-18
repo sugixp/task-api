@@ -4,8 +4,6 @@ API REST para gerenciamento de tarefas, com autenticação de usuários, constru
 
 🔗 **Front-end (GitHub Pages):** https://sugixp.github.io/task-api/
 
-> ⚠️ **Sobre o deploy na AWS:** a API foi implantada e testada com sucesso no AWS Elastic Beanstalk (evidências e passo a passo neste README). O ambiente foi encerrado propositalmente após a validação para evitar custos de manutenção contínua fora do escopo deste projeto de estudo. A reativação é rápida — o ambiente inteiro é recriado com um único comando (`eb create task-api-env`), já que toda a configuração permanece salva no projeto.
-
 ## Sobre o projeto
 
 Este projeto evoluiu a partir de um CRUD simples em Python/SQLite para uma API mais robusta, com o objetivo de demonstrar na prática conceitos usados em ambientes profissionais: autenticação segura, isolamento de dados por usuário, testes automatizados, containerização e deploy em nuvem.
@@ -115,10 +113,8 @@ Uma interface simples em HTML, CSS e JavaScript puro consome a API para demonstr
 
 Este projeto tem fins de estudo e portfólio, e algumas decisões refletem esse escopo:
 
-- **Banco de dados SQLite dentro do container**: os dados não persistem entre reinicializações do ambiente na AWS. Em um cenário de produção, seria usado um banco gerenciado externo (ex: Amazon RDS).
-- **CORS liberado para todas as origens (`*`)**: adequado para desenvolvimento e demonstração; em produção, seria restrito ao domínio específico do front-end.
-- **API servida via HTTP (sem HTTPS)**: por essa razão, o front-end publicado via GitHub Pages (HTTPS) não consegue se conectar diretamente à API em produção — os navegadores bloqueiam esse tipo de requisição por segurança ("mixed content"). A solução correta seria colocar a API atrás de uma distribuição CloudFront (HTTPS gratuito), o que foi planejado e configurado parcialmente, mas não finalizado nesta versão devido a uma verificação de conta pendente do lado da AWS. O front-end funciona normalmente quando executado localmente, onde essa restrição de navegador não se aplica.
-- **Próximos passos planejados**: finalizar a configuração de HTTPS via CloudFront, migrar para um banco de dados persistente, e adicionar paginação nas listagens.
+- **Banco de dados SQLite dentro do container**: os dados não persistem entre reinicializações do ambiente na AWS. Em um cenário de produção, seria usado um banco gerenciado externo.
+- **Próximos passos planejados**: migrar para um banco de dados persistente, e adicionar paginação nas listagens.
 
 ## Autor
 
